@@ -66,10 +66,7 @@ class MainActivity : AppCompatActivity(), OnDataReceived {
         initialization()
         gridLayoutManager = GridLayoutManager(this, 2)
         recyclerView!!.setLayoutManager(gridLayoutManager)
-        //recyclerView!!.layoutManager = gridLayoutManager
         recyclerView!!.setHasFixedSize(true)
-//        adapter = modelArrayList?.let { it1 -> Adapter(applicationContext, modelArrayList!!) }
-//        recyclerView!!.setAdapter(adapter as Adapter)
         adapter = Adapter(applicationContext, modelArrayList!!)
         recyclerView!!.adapter = adapter
         recyclerView!!.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -178,25 +175,7 @@ class MainActivity : AppCompatActivity(), OnDataReceived {
                 it1
                     .subscribe(object : BiConsumer<SearchModel?, Throwable?> {
                         @SuppressLint("NotifyDataSetChanged")
-
                         @Throws(Exception::class)
-//                        fun accept(searchModel: SearchModel, throwable: Throwable?) {
-//                            if (throwable != null) {
-//                                Toast.makeText(
-//                                    applicationContext,
-//                                    "Not able to get",
-//                                    Toast.LENGTH_SHORT
-//                                ).show()
-//                            } else {
-//                                modelArrayList.clear()
-//                                modelArrayList.addAll(searchModel.results!!) //modelArrayList!!.addAll(searchModel.getResults()!!)
-//                                adapter?.notifyDataSetChanged()
-//                            }
-//                            isLoading = false
-//                            if (modelArrayList!!.size > 0) {
-//                                isLastPage = modelArrayList!!.size < pageSize
-//                            } else isLastPage = true
-//                        }
 
                         override fun accept(searchModel: SearchModel?, throwable: Throwable?) {
                             if (throwable != null) {
@@ -266,9 +245,7 @@ class MainActivity : AppCompatActivity(), OnDataReceived {
     }
     @SuppressLint("NotifyDataSetChanged")
     private fun Adapter1?.notifyDataSetChanged() {
-//        modelArrayList!!.clear()
-//         //modelArrayList!!.addAll(searchModel.getResults()!!)
-//        adapter?.notifyDataSetChanged()
+
     }
 }
 

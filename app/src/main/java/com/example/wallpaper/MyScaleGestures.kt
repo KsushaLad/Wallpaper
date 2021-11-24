@@ -22,9 +22,9 @@ class MyScaleGestures(c: Context?) : View.OnTouchListener, OnScaleGestureListene
     override fun onScale(detector: ScaleGestureDetector): Boolean {
         scaleFactor *= detector.scaleFactor
         scaleFactor =
-            if (scaleFactor < 1) 1F else scaleFactor // prevent our view from becoming too small //
+            if (scaleFactor < 1) 1F else scaleFactor
         scaleFactor = (scaleFactor * 1150).toInt()
-            .toFloat() / 1150 // Change precision to help with jitter when user just rests their fingers //
+            .toFloat() / 1150
         view?.setScaleX(scaleFactor)
         view?.setScaleY(scaleFactor)
         return true

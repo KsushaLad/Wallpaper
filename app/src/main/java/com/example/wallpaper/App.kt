@@ -13,7 +13,7 @@ import android.app.Application
 
 class App : Application() {
      var unsplashService: UnsplashService? = null
-        //private set
+
 
     override fun onCreate() {
         super.onCreate()

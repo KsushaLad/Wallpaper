@@ -28,7 +28,7 @@ class Adapter(context: Context, wallpaperList: MutableList<ImageModel>) :
     @NonNull
     override fun onCreateViewHolder(@NonNull parent: ViewGroup, viewType: Int): ViewHolder {
         val view: View =
-            LayoutInflater.from(context).inflate(R.layout.item_layout, parent, false) //!!!
+            LayoutInflater.from(context).inflate(R.layout.item_layout, parent, false)
         return ViewHolder(view)
     }
 
@@ -38,20 +38,18 @@ class Adapter(context: Context, wallpaperList: MutableList<ImageModel>) :
             .with(context)
             .load(
                 wallpaperList[position].urls!!.regular
-//                    .getUrls()
-//                    ?.getRegular()
             )
             .into(holder.imageView)
         holder.imageView.setOnClickListener { v ->
             val intent = Intent(v.getContext(), SetWallpaperActivity::class.java)
-            intent.putExtra("image", "" + wallpaperList[position].urls!!.regular) //.getUrls()!!.getRegular())
+            intent.putExtra("image", "" + wallpaperList[position].urls!!.regular)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             v.getContext().startActivity(intent)
         }
         holder.imageView.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View) {
                 val intent = Intent(view.getContext(), SetWallpaperActivity::class.java)
-                intent.putExtra("image", wallpaperList[position].urls!!.regular) //.getUrls()!!.getRegular())
+                intent.putExtra("image", wallpaperList[position].urls!!.regular)
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                 view.getContext().startActivity(intent)
                 return

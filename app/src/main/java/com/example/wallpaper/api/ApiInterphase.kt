@@ -24,18 +24,9 @@ interface ApiIntephase {
 
     @Headers("Authorization: Client-ID \$API")
     @GET("/search/photos")
-    fun searchImages( //!!!
+    fun searchImages(
         @Query("query") query: String?,
         @Query("per_page") per_page: Int
     ): Single<SearchModel?>?
-
-
-@Headers("Authorization: Client-ID \$API")
-@GET("/photos")
-fun getIm( //!!!
-    @Query("client_id") key: String? = null,
-
-): Single<List<ImageModel?>?>?
-
 
 }

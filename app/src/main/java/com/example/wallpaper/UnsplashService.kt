@@ -21,7 +21,7 @@ class UnsplashService {
         var KEY_API = "e8LZ4f3PcORqogORrr92K_Uz3HzG8xx48IXkOonfDsw"
     }
 
-    init { //!!!
+    init {
         val retrofit: Retrofit = createRetrofit()
         retrofit.create(ApiIntephase::class.java).also { apiIntephase = it }
     }
